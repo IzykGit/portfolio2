@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+.nav {
+    position: absolute;
+    background-color: black;
+
+    right: 0;
+
+    width: 30rem;
+    height: 100vh;
+
+    font-family: "Overpass", sans-serif;
+}
+
+
+
+
+
+
+
+
+.navbar {
+    list-style-type: none;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.navbar > a {
+    text-decoration: none;
+    color: white;
+
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+
+
+
+.hamburger_menu_open {
+    position: absolute;
+    z-index: 2;
+    right: 2rem;
+    top: 2rem;
+
+    width: 2.5rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    cursor: pointer;
+}
+
+.hamburger_menu_open > div {
+    width: 100%;
+    height: 0.3rem;
+
+    background-color: white;
+}
+
+
+
+
+.hamburger_menu {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+
+    width: 2.5rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    cursor: pointer;
+}
+
+.hamburger_menu > div {
+    width: 100%;
+    height: 0.3rem;
+
+    background-color: black;
+}
+
+
+
+
+
+.navbar_closed {
+    width: 0rem;
+    transition: 0.3s ease;
+}
+
+.close_list {
+    display: none;
+    transition: 0;
+}
