@@ -3,13 +3,12 @@
 .nav {
     position: absolute;
     background-color: black;
-
-    right: 0;
-
-    width: 30rem;
-    height: 100vh;
+    border-radius: 2rem;
+    top: 2rem;
+    right: 3rem;
 
     font-family: "Overpass", sans-serif;
+    z-index: 50;
 }
 
 
@@ -42,12 +41,12 @@
 
 .hamburger_menu_open {
     position: absolute;
-    z-index: 2;
-    right: 2rem;
-    top: 2rem;
+    z-index: 51;
+    right: 4.7rem;
+    top: 3.5rem;
 
-    width: 2.5rem;
-    height: 2rem;
+    width: 2rem;
+    height: 1.5rem;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -58,20 +57,21 @@
 .hamburger_menu_open > div {
     width: 100%;
     height: 0.3rem;
-
     background-color: white;
 }
 
 
 
 
+
 .hamburger_menu {
     position: absolute;
-    right: 2rem;
-    top: 2rem;
+    right: 4.5rem;
+    top: 3.5rem;
+    z-index: 51;
 
-    width: 2.5rem;
-    height: 2rem;
+    width: 2rem;
+    height: 1.5rem;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -83,17 +83,12 @@
     width: 100%;
     height: 0.3rem;
 
-    background-color: black;
+    background-color: white;
 }
 
 
 
 
-
-.navbar_closed {
-    width: 0rem;
-    transition: 0.3s ease;
-}
 
 .close_list {
     display: none;

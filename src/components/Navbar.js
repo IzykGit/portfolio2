@@ -1,34 +1,45 @@
 import React, { useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import { motion, transform } from 'framer-motion';
+
 import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => {
 
-    const [closed, setClosed] = useState(true)
+    const [closed, toggle] = useState(true)
 
-    function handleMenu() {
-        setClosed(!closed)
+    const variants = {
+        open: { width: '30rem', height: '60vh' },
+        closed: { width: '5rem', height: '4.5rem' }
+    }
+
+    const hamburgerVariants = {
+        ham_1: { transform: `rotateZ(${45}deg) translateY(${0.6}rem) translateX(${0.35}rem)` },
+        ham_2: { width: '0rem' },
+        ham_3: { transform: `rotateZ(${-45}deg) translateY(${-0.5}rem) translateX(${0.25}rem)`, },
+
+        openSpin: { transform: `rotate(${180}deg`, transition: { duration: 0.5 }},
+        closeSpin: { transform: `rotate(${0}deg`, transition: { duration: 0.3 }}
     }
 
     return (
         <>
-            <div className={closed ? styles.hamburger_menu : styles.hamburger_menu_open} onClick={handleMenu}>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <CSSTransition in={closed} timeout={500}>
-                <nav className={closed ? styles.nav_closed : styles.nav}>
+            <motion.div variants={hamburgerVariants} animate={closed ? "closeSpin" : "openSpin" } className={
+                closed ? styles.hamburger_menu : styles.hamburger_menu_open}
+                onClick={() => toggle(!closed)}>
 
-                    <div className={closed ? styles.close_list : styles.navbar}>
-                        <a href='#'>About</a>
-                        <a href='#'>Projects</a>
-                        <a href='#'>Resume</a>
-                        <a href='#'>LinkedIn</a>
-                    </div>
-                </nav>
-            </CSSTransition>
+                <motion.div variants={hamburgerVariants} animate={closed ? "" : "ham_1"}></motion.div>
+                <motion.div variants={hamburgerVariants} animate={closed ? "" : "ham_2"}></motion.div>
+                <motion.div variants={hamburgerVariants} animate={closed ? "" : "ham_3"}></motion.div>
+            </motion.div>
+            <motion.nav variants={variants} animate={ closed ? "closed" : "open" } className={styles.nav}>
 
+                <div className={closed ? styles.close_list : styles.navbar}>
+                    <a href='/'>About</a>
+                    <a href='/'>Projects</a>
+                    <a href='/'>Resume</a>
+                    <a href='/'>LinkedIn</a>
+                </div>
+            </motion.nav>
         </>
     )
 }
