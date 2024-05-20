@@ -1,34 +1,28 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useRef } from "react";
-import { useInView } from "framer-motion"
+import React, {useEffect} from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 import styles from '../styles/Fold.module.css';
 
 const Fold = () => {
 
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true })
+    useEffect(() => {
+        Aos.init({
+            duration: 500
+        })
+    })
 
     return (
-        <section ref={ref}>
-            <div>
-                <motion.p
-                    initial={{ y: '-100%', opacity: 0 }}
-                    animate={isInView ? { y: '0%', opacity: 1 } : {}}
-                    transition={{ duration: 0.3 }}
-                    className={styles.name}
-                >Lance</motion.p>
+        <section className={styles.fold_section}>
 
-                <motion.p
-                    initial={{ y: '-100%', opacity: 0 }}
-                    animate={isInView ? { y: '0%', opacity: 1 } : {}}
-                    transition={{ duration: 0.3, delay: 0.5 }}
-                    className={styles.name}
-                >Hemphill</motion.p>
-            </div>
-            <div>
-                
+            <div className={styles.text_container}>
+
+                <p data-aos="fade-right" className={styles.name}>Lance</p>
+
+                <p data-aos="fade-right" data-aos-delay="100" className={styles.name}>Hemphill</p>
+
+
+                <p data-aos="fade-right" data-aos-delay="200" className={styles.web_developer}>Front End <span>Developer</span></p>
             </div>
 
         </section>

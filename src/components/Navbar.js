@@ -36,8 +36,8 @@ const Navbar = () => {
                 <div className={closed ? styles.close_list : styles.navbar}>
                     <a href='/'>About</a>
                     <a href='/'>Projects</a>
-                    <a href='/'>Resume</a>
-                    <a href='/'>LinkedIn</a>
+                    <a rel="noopener noreferrer" target='_blank' href='/Resume.pdf' aria-label='Resume'>Resume</a>
+                    <a rel="noopener noreferrer" target='_blank' href='https://www.linkedin.com/in/lance-hemphill-250b85218/' aria-label='LinkedIn'>LinkedIn</a>
                 </div>
             </motion.nav>
         </>
