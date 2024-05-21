@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom'
 import { motion, transform } from 'framer-motion';
 
 import styles from '../styles/Navbar.module.css';
 
-const Navbar = () => {
+const Navbar = ({ closeNav }) => {
 
     const [closed, toggle] = useState(true)
+
+    useEffect(() => {
+        if(!closed) {
+            toggle(closeNav)
+        }
+    }, [closeNav])
 
     const variants = {
         open: { width: '30rem', height: '60vh' },
@@ -34,10 +41,11 @@ const Navbar = () => {
             <motion.nav variants={variants} animate={ closed ? "closed" : "open" } className={styles.nav}>
 
                 <div className={closed ? styles.close_list : styles.navbar}>
-                    <a href='/'>About</a>
-                    <a href='/'>Projects</a>
-                    <a rel="noopener noreferrer" target='_blank' href='/Resume.pdf' aria-label='Resume'>Resume</a>
-                    <a rel="noopener noreferrer" target='_blank' href='https://www.linkedin.com/in/lance-hemphill-250b85218/' aria-label='LinkedIn'>LinkedIn</a>
+                    <a href='/' onClick={() => toggle(!closed)}>About</a>
+                    <a href='/' onClick={() => toggle(!closed)}>Projects</a>
+                    <a href='/' onClick={() => toggle(!closed)}>Contact Me</a>
+                    <a rel="noopener noreferrer" target='_blank' href='/Resume.pdf' aria-label='Resume' onClick={() => toggle(!closed)}>Resume</a>
+                    <a rel="noopener noreferrer" target='_blank' href='https://www.linkedin.com/in/lance-hemphill-250b85218/' aria-label='LinkedIn' onClick={() => toggle(!closed)}>LinkedIn</a>
                 </div>
             </motion.nav>
         </>

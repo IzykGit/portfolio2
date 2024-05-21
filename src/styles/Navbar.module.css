@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 
 .nav {
-    position: absolute;
+    position: fixed;
     background-color: black;
     border-radius: 2rem;
     top: 2rem;
@@ -40,7 +40,7 @@
 
 
 .hamburger_menu_open {
-    position: absolute;
+    position: fixed;
     z-index: 51;
     right: 4.7rem;
     top: 3.5rem;
@@ -65,7 +65,7 @@
 
 
 .hamburger_menu {
-    position: absolute;
+    position: fixed;
     right: 4.5rem;
     top: 3.5rem;
     z-index: 51;
