@@ -1,9 +1,11 @@
-import './App.css';
 import { useState, useEffect } from 'react';
 
+import Fold from './components/Fold'
+
 import Navbar from './components/Navbar';
-import Fold from './components/Fold';
-import About from './components/About';
+
+
+import styles from './App.module.css'
 
 function App() {
 
@@ -17,12 +19,9 @@ function App() {
       <header>
         <Navbar closeNav={closeNav}/>
       </header>
-      <main onClick={() => toggleCloseNav(!closeNav)} >
+      <main onClick={() => toggleCloseNav(!closeNav)} className={styles.main}>
 
-
-        <Fold />
-
-        <About />
+      <Fold />
 
       </main>
     </>

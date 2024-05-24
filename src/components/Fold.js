@@ -2,7 +2,10 @@ import React, {useEffect} from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
+import Selfie from '../assets/selfie.png'
+
 import styles from '../styles/Fold.module.css';
+
 
 const Fold = () => {
 
@@ -15,15 +18,15 @@ const Fold = () => {
     return (
         <section className={styles.fold_section}>
 
-            <div className={styles.text_container}>
-
-                <p data-aos="fade-right" className={styles.name}>Lance</p>
-
-                <p data-aos="fade-right" data-aos-delay="100" className={styles.name}>Hemphill</p>
-
-
-                <p data-aos="fade-right" data-aos-delay="200" className={styles.web_developer}>Front End <span>Developer</span></p>
+            <div data-aos="fade-in" className={styles.background_text}>
+                <p>Front <br /> End <br /> Developer</p>
             </div>
+
+            {/* <div className={styles.text_container}>
+                <h1>Hello, I'm Lance, <br /> a Front-End Developer.</h1>
+                <img src={Selfie} alt='Lance Hemphill'/>
+            </div> */}
+
 
         </section>
     )

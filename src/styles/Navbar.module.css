@@ -2,13 +2,14 @@
 
 .nav {
     position: fixed;
-    background-color: black;
+    background-color: white;
     border-radius: 2rem;
     top: 2rem;
     right: 3rem;
 
     font-family: "Overpass", sans-serif;
     z-index: 50;
+    border: 0.15rem solid black;
 }
 
 
@@ -23,17 +24,21 @@
     height: 100%;
 
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
 
 .navbar > a {
     text-decoration: none;
-    color: white;
+    color: black;
 
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: 700;
+    transition: 0.2s;
+}
+
+.navbar > a:hover {
+    transform: scale(1.1);
 }
 
 
@@ -42,8 +47,8 @@
 .hamburger_menu_open {
     position: fixed;
     z-index: 51;
-    right: 4.7rem;
-    top: 3.5rem;
+    right: 4.6rem;
+    top: 3.6rem;
 
     width: 2rem;
     height: 1.5rem;
@@ -57,7 +62,7 @@
 .hamburger_menu_open > div {
     width: 100%;
     height: 0.3rem;
-    background-color: white;
+    background-color: black;
 }
 
 
@@ -66,8 +71,8 @@
 
 .hamburger_menu {
     position: fixed;
-    right: 4.5rem;
-    top: 3.5rem;
+    right: 4.6rem;
+    top: 3.6rem;
     z-index: 51;
 
     width: 2rem;
@@ -83,7 +88,7 @@
     width: 100%;
     height: 0.3rem;
 
-    background-color: white;
+    background-color: black;
 }
 
 

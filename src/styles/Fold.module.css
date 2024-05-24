@@ -1,62 +1,50 @@
-.fold_section {
 
+.fold_section {
     height: 100vh;
 
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
+.background_text {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.background_text > p {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 15rem;
+
+    color: white;
+    text-shadow: 0rem 0rem 2.5rem rgb(110, 110, 110);
+
+    opacity: 0.1;
+    margin: 0;
+
+
+    /* disabling the carat for the background text */
+
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+     user-select: none;    
+}
+
 .text_container {
-    padding: 0rem 10rem;
+    width: 90%;
     display: flex;
-    flex-direction: column;
-    
-    line-height: 11rem;
-}
-
-.name {
-    font-size: 10em;
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: max-content;
-}
-
-.name::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 6.5rem;
-    z-index: -1;
-    top: 4.5rem;
-
-    background-color: #8ecae6;
-}
-
-.web_developer {
-    font-size: 5em;
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: max-content;
+    justify-content: space-evenly;
 }
 
 
-.web_developer > span::before {
-    position: absolute;
-    content: "";
-    width: 25rem;
-    height: 4rem;
-    z-index: -1;
-    top: 4.5rem;
-
-    background-color: #ffb703;
+.text_container > h1 {
+    font-size: 4rem;
 }
 
-
-
-
-
-
+.text_container > img {
+    height: 30rem;
+    filter: grayscale(1);
+}
