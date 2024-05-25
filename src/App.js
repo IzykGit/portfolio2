@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import Fold from './components/Fold'
+import About from './components/About';
 
 import Navbar from './components/Navbar';
 
@@ -23,6 +24,7 @@ function App() {
 
       <Fold />
 
+      <About />
       </main>
     </>
   );

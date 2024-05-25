@@ -36,10 +36,10 @@
 }
 
 .content_container {
-    width: 90%;
+    width: 70%;
     height: max-content;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
 }
 
@@ -51,10 +51,22 @@
 }
 
 
+.content_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 
 .content_text > h1 {
     font-size: 4rem;
-    margin: 0 0 2rem 0;
+    margin: 0;
+}
+
+.content_text > p {
+    font-size: 1.2rem;
+
+    margin: 2rem 0;
 }
 
 .content_text > button {
