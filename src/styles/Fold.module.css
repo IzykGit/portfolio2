@@ -9,17 +9,19 @@
 
 .background_text {
     position: absolute;
-    top: 0;
     left: 0;
+    z-index: -2;
+
+    align-self: center;
 }
 
 .background_text > p {
     font-size: 14rem;
     font-weight: 700;
-    line-height: 15rem;
+    line-height: 14rem;
 
     color: white;
-    text-shadow: 0rem 0rem 2.5rem rgb(110, 110, 110);
+    text-shadow: 0rem 0rem 2.5rem rgb(78, 78, 78);
 
     opacity: 0.1;
     margin: 0;
@@ -33,18 +35,40 @@
      user-select: none;    
 }
 
-.text_container {
+.content_container {
     width: 90%;
+    height: max-content;
     display: flex;
     justify-content: space-evenly;
+
 }
 
-
-.text_container > h1 {
-    font-size: 4rem;
-}
-
-.text_container > img {
-    height: 30rem;
+.content_container > img {
+    height: 29rem;
     filter: grayscale(1);
+
+    border: 0.15rem solid black;
 }
+
+
+
+.content_text > h1 {
+    font-size: 4rem;
+    margin: 0 0 2rem 0;
+}
+
+.content_text > button {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    
+    height: 4rem;
+
+
+    background-color: black;
+    border: none;
+
+    cursor: pointer;
+}
+
+
