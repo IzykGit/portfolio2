@@ -1,30 +1,51 @@
 import { useState, useEffect } from 'react';
+import AnimatedCursor from 'react-animated-cursor';
+import { motion } from 'framer-motion';
+
 
 import Fold from './components/Fold'
-import About from './components/About';
+import Projects from './components/Projects';
 
 import Navbar from './components/Navbar';
 
 
 import styles from './App.module.css'
 
+
 function App() {
 
   const [closeNav, toggleCloseNav] = useState(false)
+
 
 
   window.addEventListener('scroll', () => toggleCloseNav(!closeNav))
 
   return (
     <>
+      <AnimatedCursor 
+          innerSize={8}
+          outerSize={0}
+          color='0, 0, 0'
+          outerAlpha={0.2}
+          innerScale={1.5}
+          outerScale={6} 
+          trailingSpeed={20}
+          innerStyle={{
+            borderRadius: 0
+            
+          }}
+          outerStyle={{
+            borderRadius: 0
+          }}
+      />
       <header>
-        <Navbar closeNav={closeNav}/>
+          <Navbar closeNav={closeNav}/>
       </header>
-      <main onClick={() => toggleCloseNav(!closeNav)} className={styles.main}>
+      <main className={styles.main}>
 
       <Fold />
 
-      <About />
+      <Projects />
       </main>
     </>
   );

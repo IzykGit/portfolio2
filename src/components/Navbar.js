@@ -15,8 +15,8 @@ const Navbar = ({ closeNav }) => {
     }, [closeNav])
 
     const variants = {
-        open: { width: '50%', height: '4.5rem' },
-        closed: { width: '5rem', height: '4.5rem' }
+        open: { width: '100%', height: '100vh', transition: { duration: 0.3 }  },
+        closed: { width: '100%', height: '0', transition: { duration: 0.3 } }
     }
 
     const hamburgerVariants = {
@@ -34,9 +34,12 @@ const Navbar = ({ closeNav }) => {
                 closed ? styles.hamburger_menu : styles.hamburger_menu_open}
                 onClick={() => toggle(!closed)}>
 
+                <button className={styles.burger_button}></button>
                 <motion.div variants={hamburgerVariants} animate={closed ? "" : "ham_1"}></motion.div>
                 <motion.div variants={hamburgerVariants} animate={closed ? "" : "ham_2"}></motion.div>
                 <motion.div variants={hamburgerVariants} animate={closed ? "" : "ham_3"}></motion.div>
+
+
             </motion.div>
             <motion.nav variants={variants} animate={ closed ? "closed" : "open" } className={styles.nav}>
 
@@ -44,6 +47,7 @@ const Navbar = ({ closeNav }) => {
                     <a href='/' onClick={() => toggle(!closed)}>Contact Me</a>
                     <a rel="noopener noreferrer" target='_blank' href='/Resume.pdf' aria-label='Resume' onClick={() => toggle(!closed)}>Resume</a>
                     <a rel="noopener noreferrer" target='_blank' href='https://www.linkedin.com/in/lance-hemphill-250b85218/' aria-label='LinkedIn' onClick={() => toggle(!closed)}>LinkedIn</a>
+                    <a rel='noopener noreferrer' target='_blank' href='https://github.com/IzykGit'></a>
                 </div>
             </motion.nav>
         </>

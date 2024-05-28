@@ -63,7 +63,7 @@ const Fold = () => {
                     animate={hover ? "onHover" : "offHover"}
                     onMouseOver={() => setHover(!hover)}
                     onMouseLeave={() => setHover(!hover)}
-                    >Get Started</motion.button>
+                    >{'<hire_me />'}</motion.button>
                 </div>
 
                 <img data-aos="fade-left" data-aos-delay={100} src={Selfie} alt='Lance Hemphill'/>

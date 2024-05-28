@@ -1,6 +1,8 @@
 
 .fold_section {
     height: 100vh;
+    width: 70%;
+    margin-bottom: 5rem;
 
     display: flex;
     justify-content: center;
@@ -36,11 +38,11 @@
 }
 
 .content_container {
-    width: 70%;
     height: max-content;
     display: flex;
     justify-content: space-between;
 
+    width: 100%;
 }
 
 .content_container > img {
@@ -52,6 +54,7 @@
 
 
 .content_text {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
