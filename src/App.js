@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 import Fold from './components/Fold'
 import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 import Navbar from './components/Navbar';
 
@@ -43,9 +44,11 @@ function App() {
       </header>
       <main className={styles.main}>
 
-      <Fold />
+          <Fold />
 
-      <Projects />
+          <Projects />
+
+          <Contact />
       </main>
     </>
   );

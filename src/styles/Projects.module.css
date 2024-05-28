@@ -67,14 +67,10 @@
     color: white;
 }
 
-.project_name > img {
-    height: 1.45rem;
-}
-
 
 
 .project_image {
-    height: 100%;
+    height: 100%; 
 }
 
 
