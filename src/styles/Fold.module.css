@@ -72,9 +72,10 @@
     margin: 2rem 0;
 }
 
-.content_text > button {
+.content_text > a {
     font-size: 1.5rem;
     font-weight: 700;
+    text-decoration: none;
     color: white;
     
     height: 4rem;
@@ -84,6 +85,10 @@
     border: none;
 
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 

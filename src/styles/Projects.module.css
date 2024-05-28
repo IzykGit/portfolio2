@@ -39,20 +39,51 @@
     text-decoration: none;
 }
 
+
+
+
+.project_links {
+    height: 100%;
+    width: 40rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .project_name {
     font-size: 2rem;
     font-weight: 700;
+    grid-column: 1 / span 2;
 
     color: black;
 }
+
+.project_links > a {
+    background-color: black;
+    padding: 1rem 2rem;
+
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+}
+
+.project_name > img {
+    height: 1.45rem;
+}
+
+
 
 .project_image {
     height: 100%;
 }
 
-.project > p > img {
-    height: 1.45rem;
-}
+
+
+
+
+
+
+
 
 
 

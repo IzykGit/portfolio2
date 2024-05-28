@@ -2,10 +2,9 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import { motion } from 'framer-motion';
 
 import projects from '../data/ProjectData'
-
-import launch from '../assets/launch.png';
 
 
 
@@ -13,38 +12,57 @@ import styles from '../styles/Projects.module.css'
 
 const Projects = () => {
 
-  useEffect(() => {
-    Aos.init({
-        duration: 500,
-        once: true
+    const [hoverDemo, setHoverDemo] = useState(null)
+    const [hoverSrc, setHoverSrc] = useState(null)
+
+    const hoverVariants = {
+        onHover: { backgroundColor: '#415a77', width: '13rem', transition: { duration: 0.2, delay: 0 }},
+        offHover: { backgroundColor: 'black', width: '10rem', transition: { duration: 0.2, delay: 0 }}
+    }
+
+    useEffect(() => {
+        Aos.init({
+            duration: 500,
+            once: true
+        })
     })
-  })
 
 
   
-  return (
-    <section className={styles.projects_section}>
+    return (
+        <section className={styles.projects_section}>
 
-        <div className={styles.projects_head}>
-            <p data-aos="fade-right">Projects -</p>
-        </div>
+            <div className={styles.projects_head}>
+                <p data-aos="fade-right">Projects -</p>
+            </div>
 
 
-        <div className={styles.projects_container}>
+            <div className={styles.projects_container}>
 
-            {projects.map(project => (
-                <div key={project.name}>
-                    <a rel="noreferrer" className={styles.project} href={project.link} target='_blank'>
-                        <p className={styles.project_name}>{project.name} <img src={launch} alt='navigate'/></p>
+                {projects.map((project, index) => (
+                    <div data-aos="fade-right" key={project.name} className={styles.project}>
+                            
+                        <div className={styles.project_links}>
+                            <p className={styles.project_name}>{project.name}</p>
+                            <motion.a
+                            variants={hoverVariants} animate={hoverDemo === index ? 'onHover' : 'offHover'}
+                            onMouseOver={() => setHoverDemo(index)} onMouseLeave={() => setHoverDemo(null)}
+                            href={project.link} target='_blank' rel="noreferrer">demo</motion.a>
+
+                            <motion.a
+                            variants={hoverVariants} animate={hoverSrc === index ? 'onHover' : 'offHover'}
+                            onMouseOver={() => setHoverSrc(index)} onMouseLeave={() => setHoverSrc(null)}
+                            href={project.code} target='_blank' rel="noreferrer">src code</motion.a>
+                        </div>
+
                         <img src={project.src} alt={`${project.name} Project`} className={styles.project_image}/>
-                    </a>
-                </div>
-            ))}
+                    </div>
+                ))}
 
-        </div>
+            </div>
 
-    </section>
-  )
+        </section>
+    )
 }
 
 export default Projects

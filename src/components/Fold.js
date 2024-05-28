@@ -14,8 +14,6 @@ const Fold = () => {
 
     const [hover, setHover] = useState(false)
 
-    const [clicked, setClicked] = useState(false)
-
     useEffect(() => {
         Aos.init({
             duration: 500
@@ -58,12 +56,13 @@ const Fold = () => {
                 <div data-aos="fade-right" className={styles.content_text}>
                     <h1>Hello, I'm Lance, <br /> a front-end developer.</h1>
                     <p>{displayedText}</p>
-                    <motion.button
+                    <motion.a
+                    href='https://www.linkedin.com/in/lance-hemphill-250b85218/' target='_blank'
                     variants={hoverVariants}
                     animate={hover ? "onHover" : "offHover"}
                     onMouseOver={() => setHover(!hover)}
                     onMouseLeave={() => setHover(!hover)}
-                    >{'<hire_me />'}</motion.button>
+                    >{'<hire_me />'}</motion.a>
                 </div>
 
                 <img data-aos="fade-left" data-aos-delay={100} src={Selfie} alt='Lance Hemphill'/>
