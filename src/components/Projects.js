@@ -33,7 +33,7 @@ const Projects = () => {
         <section className={styles.projects_section}>
 
             <div className={styles.projects_head}>
-                <p data-aos="fade-right">Projects -</p>
+                <p data-aos="fade-in">Projects -</p>
             </div>
 
 
