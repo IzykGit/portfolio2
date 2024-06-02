@@ -47,7 +47,7 @@ const Navbar = ({ closeNav }) => {
                     <a href='/' onClick={() => toggle(!closed)}>Contact Me</a>
                     <a rel="noopener noreferrer" target='_blank' href='/Resume.pdf' aria-label='Resume' onClick={() => toggle(!closed)}>Resume</a>
                     <a rel="noopener noreferrer" target='_blank' href='https://www.linkedin.com/in/lance-hemphill-250b85218/' aria-label='LinkedIn' onClick={() => toggle(!closed)}>LinkedIn</a>
-                    <a rel='noopener noreferrer' target='_blank' href='https://github.com/IzykGit' aria-label='Github'></a>
+                    <a rel='noopener noreferrer' target='_blank' href='https://github.com/IzykGit' aria-label='Github'>Github</a>
                 </div>
             </motion.nav>
         </>
