@@ -36,8 +36,7 @@ const Contact = () => {
         e.preventDefault();
 
   
-        emailjs
-        .sendForm(
+        emailjs.sendForm(
             'service_tiactp1',
             'template_eani1qb',
             formRef.current,
