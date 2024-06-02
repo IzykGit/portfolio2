@@ -3,8 +3,8 @@ import { useState, useEffect, useRef } from 'react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { motion } from 'framer-motion'
-import emailjs from '@emailjs/browser';
+import { motion, transform } from 'framer-motion'
+import emailjs, { send } from '@emailjs/browser';
 
 
 import styles from '../styles/Contact.module.css'
@@ -16,6 +16,8 @@ const Contact = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+
+    const [clicked, setClicked] = useState("Send")
 
 
     useEffect(() => {
@@ -48,12 +50,23 @@ const Contact = () => {
                 setName("");
                 setEmail("");
                 setMessage("");
+                setClicked("Message Sent")
             },
             (error) => {
                 console.log('FAILED...', error.text);
             },
             );
     };
+
+
+    const handleClicked = () => {
+        if(name || email || message) {
+            setClicked("Loading...")
+        }
+        else {
+            setClicked("Send")
+        }
+    }
   
 
     return (
@@ -110,8 +123,9 @@ const Contact = () => {
                 onMouseLeave={() => setHover(false)}
                 className={styles.send_button}
                 type="submit"
+                onClick={handleClicked}
                 >
-                Send
+                {clicked}
                 </motion.button>
         </form>
 

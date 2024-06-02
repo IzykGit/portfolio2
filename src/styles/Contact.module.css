@@ -88,11 +88,11 @@
     }
 
     .text_input {
-        padding: 0.5rem 0rem
+        padding: 0.5rem 0rem 0.5rem;
     }
 
     .text_content {
-        padding: 0.5rem 0rem;
+        padding: 0.5rem 0rem 0.5rem;
         height: 50vh;
     }
 }

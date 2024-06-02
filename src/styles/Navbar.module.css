@@ -126,6 +126,12 @@
     }
 }
 
+@media screen and (max-width: 750px) {
+    .navbar > a {
+        font-size: 2rem;
+    }
+}
+
 @media screen and (max-width: 500px) {
     .hamburger_menu_open {
         right: 2rem;
