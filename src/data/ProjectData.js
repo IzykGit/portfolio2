@@ -8,7 +8,7 @@ const projects = [
     {
         name: 'Portfolio V1',
         src: PortfolioV1,
-        link: 'https://www.lancehemphill.com/',
+        link: 'https://portfolio-eosin-five-60.vercel.app/',
         code: 'https://github.com/IzykGit/Portfolio'
     },
     {
