@@ -1,15 +1,22 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser';
+
 
 import styles from '../styles/Contact.module.css'
 
 const Contact = () => {
 
-    const [hover, setHover] = useState(false)
+    const [hover, setHover] = useState(false);
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
 
     useEffect(() => {
         Aos.init({
@@ -20,8 +27,35 @@ const Contact = () => {
 
     const hoverVariants = {
         onHover: { backgroundColor: '#415a77', width: '20rem', transition: { duration: 0.2, delay: 0 }},
-        offHover: { backgroundColor: 'black', width: '14rem', transition: { duration: 0.2, delay: 0 }}
+        offHover: { backgroundColor: '#000000', width: '14rem', transition: { duration: 0.2, delay: 0 }}
     }
+
+    const formRef = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+  
+        emailjs
+        .sendForm(
+            'service_tiactp1',
+            'template_eani1qb',
+            formRef.current,
+            'of8ItaL1FBtzXYkQw',
+          )
+            .then(
+            (res) => {
+                console.log('SUCCESS!');
+                setName("");
+                setEmail("");
+                setMessage("");
+            },
+            (error) => {
+                console.log('FAILED...', error.text);
+            },
+            );
+    };
+  
 
     return (
         <section className={styles.contact}>
@@ -30,29 +64,57 @@ const Contact = () => {
                 <p>Contact</p>
             </div>
 
-            <form className={styles.input_fields}>
-                <div>
-                    <label className={styles.input_label} for='Email'>Email:</label>
-                    <input className={styles.text_input} type='text' placeholder='example@email.com' name='Email'/>
+            <form ref={formRef} className={styles.input_fields} onSubmit={sendEmail}>
+                <div data-aos="fade-right">
+
+                    <label className={styles.input_label} htmlFor="name">Name</label>
+                    <input
+                        className={styles.text_input}
+                        type="text"
+                        placeholder=""
+                        name="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                    />
                 </div>
 
-                <div>
-                    <label className={styles.input_label} for="Subject">Subject:</label>
-                    <input className={styles.text_input} type='text' placeholder="How's your day?" name='Subject'/>
+                <div data-aos="fade-right">
+                    <label className={styles.input_label} htmlFor="email">Email</label>
+                    <input
+                        className={styles.text_input}
+                        type="email"
+                        placeholder="example@gmail.com"
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
                 </div>
 
-                <div>
-                    <label className={styles.input_label} for="Text">Text:</label>
-                    <textarea className={styles.text_content} type='text' placeholder='' name='Text'/>
+                <div data-aos="fade-right">
+                    <label className={styles.input_label} htmlFor="message">Message</label>
+                    <textarea
+                        className={styles.text_content}
+                        placeholder=""
+                        name="message"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        required
+                    />
                 </div>
-
 
                 <motion.button
                 variants={hoverVariants}
-                animate={hover ? "onHover" : "offHover"}
-                onMouseOver={() => setHover(!hover)} onMouseLeave={() => setHover(!hover)}
-                className={styles.send_button}>Send</motion.button>
-            </form>
+                animate={hover ? 'onHover' : 'offHover'}
+                onMouseOver={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+                className={styles.send_button}
+                type="submit"
+                >
+                Send
+                </motion.button>
+        </form>
 
         </section>
     )

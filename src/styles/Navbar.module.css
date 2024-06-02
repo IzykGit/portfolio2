@@ -111,3 +111,29 @@
     display: none;
     transition: 0;
 }
+
+
+
+@media screen and (max-width: 1000px) {
+    .hamburger_menu_open {
+        right: 3.3rem;
+        top: 2.6rem;
+    }
+
+    .hamburger_menu {
+        right: 3.3rem;
+        top: 2.6rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hamburger_menu_open {
+        right: 2rem;
+        top: 1.6rem;
+    }
+
+    .hamburger_menu {
+        right: 2rem;
+        top: 1.6rem;
+    }
+}

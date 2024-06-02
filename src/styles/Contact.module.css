@@ -1,7 +1,8 @@
 .contact {
-    height: 40rem;
+    height: max-content;
     width: 70%;
     margin-bottom: 10rem;
+
 }
 
 .header {
@@ -15,18 +16,21 @@
 }
 
 .input_fields {
-    height: 30rem;
+    height: max-content;
     width: 100%;
 
     display: flex;
     flex-direction: column;
 }
 
+.input_fields > div {
+    margin: 0.5rem 0rem;
+}
+
 
 .input_label {
     font-size: 1.2rem;
     font-weight: 700;
-    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 
     height: 1rem;
@@ -67,4 +71,28 @@
     color: white;
 
     border: none;
+}
+
+
+
+@media screen and (max-width: 725px) {
+    .header > p  {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact {
+        width: 90%;
+        margin-bottom: 5rem;
+    }
+
+    .text_input {
+        padding: 0.5rem 0rem
+    }
+
+    .text_content {
+        padding: 0.5rem 0rem;
+        height: 50vh;
+    }
 }
