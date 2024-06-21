@@ -79,7 +79,7 @@ const Contact = () => {
             <form ref={formRef} className={styles.input_fields} onSubmit={sendEmail}>
                 <div data-aos="fade-right">
 
-                    <label className={styles.input_label} htmlFor="name">Name</label>
+                    <label className={styles.input_label} htmlFor="name" aria-label='Your Name'>Name</label>
                     <input
                         className={styles.text_input}
                         type="text"
@@ -92,7 +92,7 @@ const Contact = () => {
                 </div>
 
                 <div data-aos="fade-right">
-                    <label className={styles.input_label} htmlFor="email">Email</label>
+                    <label className={styles.input_label} htmlFor="email" aria-label='Your Email'>Email</label>
                     <input
                         className={styles.text_input}
                         type="email"
@@ -105,7 +105,7 @@ const Contact = () => {
                 </div>
 
                 <div data-aos="fade-right">
-                    <label className={styles.input_label} htmlFor="message">Message</label>
+                    <label className={styles.input_label} htmlFor="message" aria-label='Your Message'>Message</label>
                     <textarea
                         className={styles.text_content}
                         placeholder=""
@@ -124,6 +124,8 @@ const Contact = () => {
                 className={styles.send_button}
                 type="submit"
                 onClick={handleClicked}
+                aria-label='Send Button'
+                aria-description='This button will send your message to my email'
                 >
                 {clicked}
                 </motion.button>

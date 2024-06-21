@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { motion, transform } from 'framer-motion';
+
 
 import Selfie from '../assets/selfie.png'
 
@@ -11,8 +11,6 @@ import styles from '../styles/Fold.module.css';
 
 
 const Fold = () => {
-
-    const [hover, setHover] = useState(false)
 
     useEffect(() => {
         Aos.init({
@@ -38,14 +36,10 @@ const Fold = () => {
         } 
     }, [index, displayedText, text]);
 
-    const hoverVariants = {
-        onHover: { backgroundColor: '#415a77', width: '20rem', transition: { duration: 0.2, delay: 0 }},
-        offHover: { backgroundColor: '#000000', width: '14rem', transition: { duration: 0.2, delay: 0 }}
-    }
 
 
     return (
-        <section className={styles.fold_section}>
+        <section className={styles.fold_section} aria-label='Fold Section'>
 
             <div data-aos="fade-in" className={styles.background_text}>
                 <p>Front- <br /> End <br /> Developer</p>
@@ -58,7 +52,7 @@ const Fold = () => {
                     <p>{displayedText}</p>
                 </div>
 
-                <img data-aos="fade-left" data-aos-delay={100} src={Selfie} alt='Lance Hemphill'/>
+                <img data-aos="fade-left" data-aos-delay={100} src={Selfie} alt='Lance Hemphill' aria-label='Image of Lance Hemphill, Website Creator'/>
             </div>
 
 

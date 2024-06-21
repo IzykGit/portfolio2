@@ -34,7 +34,7 @@ const Navbar = ({ closeNav }) => {
                 closed ? styles.hamburger_menu : styles.hamburger_menu_open}
                 onClick={() => toggle(!closed)}>
 
-                <button className={styles.burger_button}></button>
+                <button className={styles.burger_button} aria-label='Navigation Button' type='button'></button>
                 <motion.div variants={hamburgerVariants} animate={closed ? "" : "ham_1"}></motion.div>
                 <motion.div variants={hamburgerVariants} animate={closed ? "" : "ham_2"}></motion.div>
                 <motion.div variants={hamburgerVariants} animate={closed ? "" : "ham_3"}></motion.div>

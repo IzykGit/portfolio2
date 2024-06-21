@@ -30,10 +30,10 @@ const Projects = () => {
 
   
     return (
-        <section className={styles.projects_section}>
+        <section className={styles.projects_section} aria-label='Project Section'>
 
             <div className={styles.projects_head}>
-                <p data-aos="fade-in">Projects -</p>
+                <h2 data-aos="fade-in">Projects -</h2>
             </div>
 
 
@@ -47,15 +47,19 @@ const Projects = () => {
                             <motion.a
                             variants={hoverVariants} animate={hoverDemo === index ? 'onHover' : 'offHover'}
                             onMouseOver={() => setHoverDemo(index)} onMouseLeave={() => setHoverDemo(null)}
-                            href={project.link} target='_blank' rel="noreferrer">demo</motion.a>
+                            href={project.link} target='_blank' rel="noreferrer"
+                            aria-label='Live Demo of Site'
+                            >demo</motion.a>
 
                             <motion.a
                             variants={hoverVariants} animate={hoverSrc === index ? 'onHover' : 'offHover'}
                             onMouseOver={() => setHoverSrc(index)} onMouseLeave={() => setHoverSrc(null)}
-                            href={project.code} target='_blank' rel="noreferrer">src code</motion.a>
+                            href={project.code} target='_blank' rel="noreferrer"
+                            aria-label='Project Source Code' 
+                            >src code</motion.a>
                         </div>
 
-                        <img src={project.src} alt={`${project.name} Project`} className={styles.project_image}/>
+                        <img src={project.src} alt={`${project.name} Project`} className={styles.project_image} aria-label='Project Image'/>
                     </div>
                 ))}
 
