@@ -79,12 +79,13 @@ const Contact = () => {
             <form ref={formRef} className={styles.input_fields} onSubmit={sendEmail}>
                 <div data-aos="fade-right">
 
-                    <label className={styles.input_label} htmlFor="name" aria-label='Your Name'>Name</label>
+                    <label className={styles.input_label} for="name" aria-label='Your Name'>Name</label>
                     <input
                         className={styles.text_input}
                         type="text"
                         placeholder=""
                         name="name"
+                        id="name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
@@ -92,12 +93,13 @@ const Contact = () => {
                 </div>
 
                 <div data-aos="fade-right">
-                    <label className={styles.input_label} htmlFor="email" aria-label='Your Email'>Email</label>
+                    <label className={styles.input_label} for="email" aria-label='Your Email'>Email</label>
                     <input
                         className={styles.text_input}
                         type="email"
                         placeholder="example@gmail.com"
                         name="email"
+                        id="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
@@ -105,11 +107,12 @@ const Contact = () => {
                 </div>
 
                 <div data-aos="fade-right">
-                    <label className={styles.input_label} htmlFor="message" aria-label='Your Message'>Message</label>
+                    <label className={styles.input_label} for="message" aria-label='Your Message'>Message</label>
                     <textarea
                         className={styles.text_content}
                         placeholder=""
                         name="message"
+                        id="message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         required
