@@ -2,9 +2,16 @@ import PortfolioV1 from '../assets/Portfolio.PNG';
 import Calculator from '../assets/calculator.PNG';
 import RockPaper from '../assets/rock-paper-scissors.PNG';
 import Countries from '../assets/countries.PNG';
+import SocialApp from '../assets/socialapp.png';
 
 
 const projects = [
+    {
+        name: 'Full Stack Social Media App',
+        src: SocialApp,
+        link: 'https://izyk.org',
+        code: 'https://github.com/IzykGit/social-app'
+    },
     {
         name: 'Portfolio V1',
         src: PortfolioV1,
