@@ -55,6 +55,7 @@
     justify-content: space-between;
     flex-direction: column;
 
+    cursor: pointer;
 }
 
 .hamburger_menu_open > div {
@@ -78,6 +79,8 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+
+    cursor: pointer;
 }
 
 .hamburger_menu > div {

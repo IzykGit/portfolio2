@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom'
-import { motion, transform } from 'framer-motion';
+import { motion } from 'framer-motion';
+
+import { hamburgerVariants } from '../data/MotionVariants';
+import { navVariants } from '../data/MotionVariants';
 
 import styles from '../styles/Navbar.module.css';
 
@@ -13,20 +15,6 @@ const Navbar = ({ closeNav }) => {
             toggle(closeNav)
         }
     }, [closeNav])
-
-    const variants = {
-        open: { width: '100%', height: '100vh', transition: { duration: 0.3 }  },
-        closed: { width: '100%', height: '0', transition: { duration: 0.3 } }
-    }
-
-    const hamburgerVariants = {
-        ham_1: { transform: `rotateZ(${45}deg) translateY(${0.6}rem) translateX(${0.35}rem)` },
-        ham_2: { width: '0rem' },
-        ham_3: { transform: `rotateZ(${-45}deg) translateY(${-0.5}rem) translateX(${0.25}rem)`, },
-
-        openSpin: { transform: `rotate(${180}deg`, transition: { duration: 0.5 }},
-        closeSpin: { transform: `rotate(${0}deg`, transition: { duration: 0.3 }}
-    }
 
     return (
         <>
@@ -41,7 +29,7 @@ const Navbar = ({ closeNav }) => {
 
 
             </motion.div>
-            <motion.nav variants={variants} animate={ closed ? "closed" : "open" } className={styles.nav}>
+            <motion.nav variants={navVariants} animate={ closed ? "closed" : "open" } className={styles.nav}>
 
                 <div className={closed ? styles.close_list : styles.navbar}>
                     <a rel="noopener noreferrer" target='_blank' href='/Resume.pdf' aria-label='Resume' onClick={() => toggle(!closed)}>Resume</a>

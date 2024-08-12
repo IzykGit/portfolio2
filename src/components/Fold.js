@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
-
 import Selfie from '../assets/selfie.png'
-
 
 import styles from '../styles/Fold.module.css';
 
@@ -54,7 +52,6 @@ const Fold = () => {
 
                 <img data-aos="fade-left" data-aos-delay={100} src={Selfie} alt='Lance Hemphill' aria-label='Image of Lance Hemphill, Website Creator'/>
             </div>
-
 
         </section>
     )

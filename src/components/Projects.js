@@ -6,19 +6,17 @@ import { motion } from 'framer-motion';
 
 import projects from '../data/ProjectData'
 
-
+import { hoverVariants } from '../data/MotionVariants';
 
 import styles from '../styles/Projects.module.css'
+
+
+
 
 const Projects = () => {
 
     const [hoverDemo, setHoverDemo] = useState(null)
     const [hoverSrc, setHoverSrc] = useState(null)
-
-    const hoverVariants = {
-        onHover: { backgroundColor: '#415a77', width: '13rem', transition: { duration: 0.2, delay: 0 }},
-        offHover: { backgroundColor: '#000000', width: '10rem', transition: { duration: 0.2, delay: 0 }}
-    }
 
     useEffect(() => {
         Aos.init({

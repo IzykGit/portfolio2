@@ -3,21 +3,23 @@ import { useState, useEffect, useRef } from 'react'
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { motion, transform } from 'framer-motion'
-import emailjs, { send } from '@emailjs/browser';
+import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser';
 
+import { hoverVariants } from '../data/MotionVariants';
 
 import styles from '../styles/Contact.module.css'
 
 const Contact = () => {
 
     const [hover, setHover] = useState(false);
+    const [clicked, setClicked] = useState("Send")
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
-    const [clicked, setClicked] = useState("Send")
+
 
 
     useEffect(() => {
@@ -26,11 +28,6 @@ const Contact = () => {
             once: true
         })
     })
-
-    const hoverVariants = {
-        onHover: { backgroundColor: '#415a77', width: '20rem', transition: { duration: 0.2, delay: 0 }},
-        offHover: { backgroundColor: '#000000', width: '14rem', transition: { duration: 0.2, delay: 0 }}
-    }
 
     const formRef = useRef();
 
@@ -119,20 +116,20 @@ const Contact = () => {
                     />
                 </div>
 
-                <motion.button
-                variants={hoverVariants}
-                animate={hover ? 'onHover' : 'offHover'}
-                onMouseOver={() => setHover(true)}
-                onMouseLeave={() => setHover(false)}
-                className={styles.send_button}
-                type="submit"
-                onClick={handleClicked}
-                aria-label='Send Button'
-                aria-description='This button will send your message to my email'
-                >
-                {clicked}
-                </motion.button>
-        </form>
+                    <motion.button
+                        variants={hoverVariants}
+                        animate={hover ? 'onHover' : 'offHover'}
+                        onMouseOver={() => setHover(true)}
+                        onMouseLeave={() => setHover(false)}
+                        className={styles.send_button}
+                        type="submit"
+                        onClick={handleClicked}
+                        aria-label='Send Button'
+                        aria-description='This button will send your message to my email'
+                    >
+                    {clicked}
+                    </motion.button>
+            </form>
 
         </section>
     )
