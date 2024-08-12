@@ -70,7 +70,7 @@
 
 
 .project_image {
-    height: 100%; 
+    width: 20rem;
 }
 
 
@@ -101,7 +101,7 @@
     }
 
     .project_image {
-        height: 15rem; 
+        width: 16rem; 
     }
 }
 
@@ -129,7 +129,7 @@
     }
 
     .project_image {
-        height: 10rem; 
+        width: 13rem; 
     }
 }
 
