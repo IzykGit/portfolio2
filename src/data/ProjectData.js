@@ -2,15 +2,15 @@ import PortfolioV1 from '../assets/Portfolio.PNG';
 import Calculator from '../assets/calculator.PNG';
 import RockPaper from '../assets/rock-paper-scissors.PNG';
 import Countries from '../assets/countries.PNG';
-import SocialApp from '../assets/socialapp.png';
+import LinkShare from '../assets/LinkSharingApp.PNG'
 
 
 const projects = [
     {
-        name: 'Full Stack Social Media App',
-        src: SocialApp,
-        link: 'https://izyk.org',
-        code: 'https://github.com/IzykGit/social-app'
+        name: 'Full Stack Link Sharing App',
+        src: LinkShare,
+        link: 'https://link-sharing-app-yzuc.vercel.app',
+        code: 'https://github.com/IzykGit/link-sharing-app'
     },
     {
         name: 'Portfolio V1',
