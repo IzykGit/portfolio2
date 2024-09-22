@@ -23,20 +23,7 @@ const projects = [
         src: Calculator,
         link: 'https://calculator-with-themes-delta.vercel.app/',
         code: 'https://github.com/IzykGit/calculator-with-themes'
-    },
-    {
-        name: 'Rock, Paper, Scissors Game',
-        src: RockPaper,
-        link: 'https://rock-paper-scissors-game-eta-ten.vercel.app/',
-        code: 'https://github.com/IzykGit/rock-paper-scissors-game'
-    },
-    {
-        name: 'Countries Info Project',
-        src: Countries,
-        link: 'https://rest-countries-project-sage.vercel.app/',
-        code: 'https://github.com/IzykGit/rest-countries-project'
     }
-
 ]
 
 export default projects
