@@ -40,13 +40,13 @@ const Fold = () => {
         <section className={styles.fold_section} aria-label='Fold Section'>
 
             <div data-aos="fade-in" className={styles.background_text}>
-                <p>Front- <br /> End <br /> Developer</p>
+                <p>Software <br /> Engineer <br /></p>
             </div>
 
             <div className={styles.content_container}>
 
                 <div data-aos="fade-right" className={styles.content_text}>
-                    <h1>Hello, I'm Lance, <br /> a front-end developer.</h1>
+                    <h1>Hello, I'm Lance, <br /> a software engineer.</h1>
                     <p>{displayedText}</p>
                 </div>
 
