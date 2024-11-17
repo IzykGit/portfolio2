@@ -1,8 +1,7 @@
 import PortfolioV1 from '../assets/Portfolio.PNG';
 import Calculator from '../assets/calculator.PNG';
-import RockPaper from '../assets/rock-paper-scissors.PNG';
-import Countries from '../assets/countries.PNG';
-import LinkShare from '../assets/LinkSharingApp.PNG'
+import LinkShare from '../assets/LinkSharingApp.PNG';
+import Multistep from "../assets/multistep.png"
 
 
 const projects = [
@@ -11,6 +10,12 @@ const projects = [
         src: LinkShare,
         link: 'https://link-sharing-app-yzuc.vercel.app',
         code: 'https://github.com/IzykGit/link-sharing-app'
+    },
+    {
+        name: 'Multistep Form',
+        src: Multistep,
+        link: "https://multistep-form-black.vercel.app/",
+        code: "https://github.com/IzykGit/multistep-form"
     },
     {
         name: 'Portfolio V1',
