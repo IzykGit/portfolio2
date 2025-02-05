@@ -16,7 +16,7 @@ const Fold = () => {
         })
     })
 
-    const text = "Looking to make cool things on the internet.";
+    const text = "Portfolio version 3.0 coming soon!";
     const typingSpeed = 40;
     const [index, setIndex] = useState(0);
     const [displayedText, setDisplayedText] = useState('');
